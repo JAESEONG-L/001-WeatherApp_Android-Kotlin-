@@ -8,9 +8,11 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/mainLayout"
         android:layout_width="match_parent"
         android:layout_height="380dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/footerLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -24,12 +26,12 @@
                 android:id="@+id/placeName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="monospace"
                 android:text="서울특별시"
                 android:textColor="@color/white"
-                android:textSize="28sp"
+                android:textSize="26.5sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -38,14 +40,16 @@
                 android:id="@+id/todayDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
+                android:layout_marginStart="55dp"
+                android:layout_marginBottom="8dp"
                 android:text="2023-11-13"
                 android:textColor="@color/morning_text"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/placeName"
-                app:layout_constraintTop_toBottomOf="@+id/placeName" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/placeName"
+                app:layout_constraintVertical_bias="0.55" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -54,7 +58,19 @@
             android:layout_height="0dp"
             android:layout_weight="0.4">
 
+            <ImageView
+                android:id="@+id/weatherImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_weather"
+                android:tint="#CDFFFFFF"
+                android:tintMode="multiply"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
             <LinearLayout
+                android:id="@+id/temperatureLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -67,37 +83,404 @@
                     android:id="@+id/temperatureHeader"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.25"
+                    android:layout_weight="0.2"
                     android:gravity="bottom"
                     android:text="최고 7°"
                     android:textAlignment="textEnd"
-                    android:textSize="15sp" />
+                    android:textColor="@color/morning_text"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/temperatureMain"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.50"
+                    android:layout_weight="0.6"
+                    android:fontFamily="sans-serif-medium"
                     android:gravity="center"
                     android:text=" 6°"
+                    android:textColor="@color/black"
                     android:textSize="60sp" />
 
                 <TextView
                     android:id="@+id/temperatureFooter"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.25"
+                    android:layout_weight="0.2"
                     android:text="최저 -4°"
                     android:textAlignment="textStart"
-                    android:textSize="15sp" />
+                    android:textColor="@color/morning_text"
+                    android:textSize="14sp" />
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TableLayout
+        <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.2">
+            android:layout_weight="0.04" />
 
-        </TableLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.36">
+
+            <LinearLayout
+                android:id="@+id/humidityLayout1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/humidityLayout2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/humidity1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.32">
+
+                    <TextView
+                        android:id="@+id/humidityTime1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:text="12시"
+                        android:textColor="@color/white"
+                        android:textSize="13.5sp"
+                        app:layout_constraintBottom_toTopOf="@+id/humidityValue1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/humidityValue1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:text="0%"
+                        android:textColor="@color/morning_text"
+                        android:textSize="13.5sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/humidityTime1" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <FrameLayout
+                    android:id="@+id/description1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.68">
+
+                    <ImageView
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_weather_sunny" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/humidityLayout2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/humidityLayout3"
+                app:layout_constraintStart_toEndOf="@+id/humidityLayout1"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/humidity2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.32">
+
+                    <TextView
+                        android:id="@+id/humidityTime2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:text="현재습도"
+                        android:textColor="@color/morning_text"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/humidityValue2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/humidityValue2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:text="0%"
+                        android:textColor="@color/morning_text"
+                        android:textSize="13.5sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/humidityTime2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <FrameLayout
+                    android:id="@+id/description2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.68">
+
+                    <ImageView
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_weather_cloudy" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/humidityLayout3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/humidityLayout4"
+                app:layout_constraintStart_toEndOf="@+id/humidityLayout2"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/humidity3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.32">
+
+                    <TextView
+                        android:id="@+id/humidityTime3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:text="18시"
+                        android:textColor="@color/white"
+                        android:textSize="13.5sp"
+                        app:layout_constraintBottom_toTopOf="@+id/humidityValue3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/humidityValue3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:text="0%"
+                        android:textColor="@color/morning_text"
+                        android:textSize="13.5sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/humidityTime3" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <FrameLayout
+                    android:id="@+id/description3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.68">
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_weather_cloudy" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/humidityLayout4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/humidityLayout5"
+                app:layout_constraintStart_toEndOf="@+id/humidityLayout3"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/humidity4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.32">
+
+                    <TextView
+                        android:id="@+id/humidityTime4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:text="21시"
+                        android:textColor="@color/white"
+                        android:textSize="13.5sp"
+                        app:layout_constraintBottom_toTopOf="@+id/humidityValue4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/humidityValue4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:text="0%"
+                        android:textColor="@color/morning_text"
+                        android:textSize="13.5sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/humidityTime4" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <FrameLayout
+                    android:id="@+id/description4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.68">
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_weather_night" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/humidityLayout5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/humidityLayout6"
+                app:layout_constraintStart_toEndOf="@+id/humidityLayout4"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/humidity5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.32">
+
+                    <TextView
+                        android:id="@+id/humidityTime5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:text="00시"
+                        android:textColor="@color/white"
+                        android:textSize="13.5sp"
+                        app:layout_constraintBottom_toTopOf="@+id/humidityValue5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/humidityValue5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:text="0%"
+                        android:textColor="@color/morning_text"
+                        android:textSize="13.5sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/humidityTime5" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <FrameLayout
+                    android:id="@+id/description5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.68">
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_weather_night" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/humidityLayout6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/humidityLayout5"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/humidity6"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.32">
+
+                    <TextView
+                        android:id="@+id/humidityTime6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:text="03시"
+                        android:textColor="@color/white"
+                        android:textSize="13.5sp"
+                        app:layout_constraintBottom_toTopOf="@+id/humidityValue6"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/humidityValue6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:text="0%"
+                        android:textColor="@color/morning_text"
+                        android:textSize="13.5sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/humidityTime6" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <FrameLayout
+                    android:id="@+id/description6"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.68">
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_weather_night" />
+                </FrameLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/footerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainLayout"></LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
