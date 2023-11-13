@@ -3,4 +3,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="morning_sky">#30ACDC</color>
+    <color name="morning_text">#284D71</color>
 </resources>

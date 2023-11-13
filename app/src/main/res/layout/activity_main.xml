@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 android:text="2023-11-13"
-                android:textColor="@color/black"
+                android:textColor="@color/morning_text"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
