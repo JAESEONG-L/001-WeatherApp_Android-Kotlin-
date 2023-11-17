@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="380dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/footerLayout"
+        app:layout_constraintBottom_toTopOf="@id/footerLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -48,7 +48,7 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/placeName"
+                app:layout_constraintTop_toBottomOf="@id/placeName"
                 app:layout_constraintVertical_bias="0.55" />
 
             <LinearLayout
@@ -85,7 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/windLayout"
+                app:layout_constraintEnd_toStartOf="@id/windLayout"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_wind" />
 
@@ -166,7 +166,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/humidityLayout2"
+                app:layout_constraintEnd_toStartOf="@id/humidityLayout2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -184,7 +184,7 @@
                         android:text="12시"
                         android:textColor="@color/white"
                         android:textSize="13.5sp"
-                        app:layout_constraintBottom_toTopOf="@+id/humidityValue1"
+                        app:layout_constraintBottom_toTopOf="@id/humidityValue1"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -200,7 +200,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/humidityTime1" />
+                        app:layout_constraintTop_toBottomOf="@id/humidityTime1" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <FrameLayout
@@ -223,8 +223,8 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/humidityLayout3"
-                app:layout_constraintStart_toEndOf="@+id/humidityLayout1"
+                app:layout_constraintEnd_toStartOf="@id/humidityLayout3"
+                app:layout_constraintStart_toEndOf="@id/humidityLayout1"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -241,7 +241,7 @@
                         android:text="현재습도"
                         android:textColor="@color/morning_text"
                         android:textSize="14sp"
-                        app:layout_constraintBottom_toTopOf="@+id/humidityValue2"
+                        app:layout_constraintBottom_toTopOf="@id/humidityValue2"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -258,7 +258,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/humidityTime2" />
+                        app:layout_constraintTop_toBottomOf="@id/humidityTime2" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <FrameLayout
@@ -281,8 +281,8 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/humidityLayout4"
-                app:layout_constraintStart_toEndOf="@+id/humidityLayout2"
+                app:layout_constraintEnd_toStartOf="@id/humidityLayout4"
+                app:layout_constraintStart_toEndOf="@id/humidityLayout2"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -299,7 +299,7 @@
                         android:text="18시"
                         android:textColor="@color/white"
                         android:textSize="13.5sp"
-                        app:layout_constraintBottom_toTopOf="@+id/humidityValue3"
+                        app:layout_constraintBottom_toTopOf="@id/humidityValue3"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -315,7 +315,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/humidityTime3" />
+                        app:layout_constraintTop_toBottomOf="@id/humidityTime3" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <FrameLayout
@@ -339,8 +339,8 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/humidityLayout5"
-                app:layout_constraintStart_toEndOf="@+id/humidityLayout3"
+                app:layout_constraintEnd_toStartOf="@id/humidityLayout5"
+                app:layout_constraintStart_toEndOf="@id/humidityLayout3"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -357,7 +357,7 @@
                         android:text="21시"
                         android:textColor="@color/white"
                         android:textSize="13.5sp"
-                        app:layout_constraintBottom_toTopOf="@+id/humidityValue4"
+                        app:layout_constraintBottom_toTopOf="@id/humidityValue4"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -373,7 +373,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/humidityTime4" />
+                        app:layout_constraintTop_toBottomOf="@id/humidityTime4" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <FrameLayout
@@ -397,8 +397,8 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/humidityLayout6"
-                app:layout_constraintStart_toEndOf="@+id/humidityLayout4"
+                app:layout_constraintEnd_toStartOf="@id/humidityLayout6"
+                app:layout_constraintStart_toEndOf="@id/humidityLayout4"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -415,7 +415,7 @@
                         android:text="00시"
                         android:textColor="@color/white"
                         android:textSize="13.5sp"
-                        app:layout_constraintBottom_toTopOf="@+id/humidityValue5"
+                        app:layout_constraintBottom_toTopOf="@id/humidityValue5"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -431,7 +431,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/humidityTime5" />
+                        app:layout_constraintTop_toBottomOf="@id/humidityTime5" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <FrameLayout
@@ -456,7 +456,7 @@
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/humidityLayout5"
+                app:layout_constraintStart_toEndOf="@id/humidityLayout5"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -473,7 +473,7 @@
                         android:text="03시"
                         android:textColor="@color/white"
                         android:textSize="13.5sp"
-                        app:layout_constraintBottom_toTopOf="@+id/humidityValue6"
+                        app:layout_constraintBottom_toTopOf="@id/humidityValue6"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -489,7 +489,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/humidityTime6" />
+                        app:layout_constraintTop_toBottomOf="@id/humidityTime6" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <FrameLayout
@@ -519,6 +519,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainLayout"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@id/mainLayout"></LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
